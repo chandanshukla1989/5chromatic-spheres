@@ -24,7 +24,7 @@ No mathematical claim was strengthened. All numbers were re-derived from the fil
   quadratic towers, parent-index convention, verification methods, CNF encoding, DRAT procedure, colourings,
   criticality certificates, Moser-spindle search, software versions, commands, SHA-256 file manifest, and the
   231 vertices of H231 and the 11 deleted vertices of G972 in radicals (H961 in full only as machine-readable files).
-- The earlier separate radical list (`H231_H961_exact_radicals.pdf`) is merged into Appendices A–B of the
+- The earlier separate radical list (`H231_H961_exact_radicals.pdf`) is merged into Appendices S1–S2 of the
   Supplementary Material.
 
 ## Repository

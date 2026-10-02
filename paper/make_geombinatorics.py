@@ -23,7 +23,6 @@ sub(r'\usepackage[margin=1in]{geometry}',
     r'\usepackage[paperwidth=5.5in,paperheight=8.5in,top=0.35in,left=0.35in,right=0.35in,bottom=0.5in,'
     r'includehead=false,includefoot=false]{geometry}' '\n'
     r'\renewcommand{\rmdefault}{ptm}' '\n'
-    r'\usepackage{longtable}' '\n'
     r'\sloppy' '\n'
     r'\pagestyle{empty}' '\n'
     r'\setlength{\emergencystretch}{3em}')
@@ -40,14 +39,7 @@ sub(r'\maketitle',
     r'\end{center}' '\n'
     r'\thispagestyle{empty}')
 
-# narrow page: one column for the vertex list, smaller type for wide tables and formulas
-a = tex.index(r'\section{Vertex list and a 5-colouring')
-b = tex.index(r'\section{Exact orbit representatives}')
-app = tex[a:b]
-app = app.replace('\\begin{multicols}{2}\n\\noindent\n', '').replace('\\end{multicols}\n', '')
-app = app.replace('\\vspace{2mm}\n', '').replace(r'\begin{tabular}{@{}rlrrrc@{}}', r'\begin{longtable}{@{}rlrrrc@{}}')
-app = app.replace(r'\end{tabular}', r'\end{longtable}')
-tex = tex[:a] + app + tex[b:]
+# narrow page: smaller type for wide tables and formulas
 # file names: allow line breaks after underscores
 sub(r'\pagestyle{empty}', r'\pagestyle{empty}' '\n' r'\renewcommand{\_}{\textunderscore\allowbreak}')
 # group generators: two rows

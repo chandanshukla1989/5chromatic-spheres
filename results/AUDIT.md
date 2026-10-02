@@ -43,7 +43,7 @@
 | 39 | G972 triage: 968 vertices, 931 essential, 34 removable, 3 untested | **PASS** | 968, 931, 34, 3 |
 | 40 | G972: greedy joint removal 963, local search 961 = H961 | **PASS** |  |
 | 41 | Table 2: the 11 deleted vertices of G972 (labels, orbits) | **PASS** |  |
-| 42 | Appendix A: 231 labels and colours match the data files | **PASS** |  |
+| 42 | Supplementary Appendix S1: 231 vertices in radicals, parent indices and colours match the data files | **PASS** |  |
 | 43 | all file names referenced in the manuscript exist | **PASS** | H231_4col.cnf, H231_4col.drat.xz, H231_5colouring.txt, H231_criticality_certificates.txt, H231_exact_coordinates.m, H231_vertices.txt, H961_5colouring.txt, H961_criticality_certificates.txt, H961_exact_coordinates.m, H961_vertices.txt, construction/build_G972.py, verification/crosscheck_solvers.py, verify_all.sh |
 
 43 of 43 checks passed.

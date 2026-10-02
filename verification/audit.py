@@ -103,11 +103,11 @@ labels = re.findall(r'\$w_(\d)\$-orbit & \$([^$]+)\$ & \$([^$]+)\$ & \$([^$]+)\$
 num = lambda s: float(s.replace('\\phantom{-}', ''))
 ok = len(labels) == 11 and all(abs(num(lab[1 + k]) - round(G9[v][k], 4)) < 1e-9 and int(lab[0]) == v // 120 + 1 for lab, v in zip(labels, removed) for k in range(3))
 check('Table 2: the 11 deleted vertices of G972 (labels, orbits)', ok)
-V2 = [[float(x) for x in r[2:5]] for r in data('H231/H231_vertices.txt')]
-app = re.findall(r'^(\d+) & ([I123]) & \$([^$]+)\$ & \$([^$]+)\$ & \$([^$]+)\$ & (\d)', tex, re.M)
-ok = len(app) == 231 and all(abs(num(a[2 + k]) - round(V2[int(a[0]) - 1][k], 4)) < 1e-9 for a in app for k in range(3)) \
-    and all(int(a[5]) == col[int(a[0]) - 1] for a in app)
-check('Appendix A: 231 labels and colours match the data files', ok)
+sup = open(P('paper', 'Supplementary_Material.tex')).read()
+app = re.findall(r'\\textbf\{(\d+)\} \(parent (\d+), [^,]+, colour (\d)\)', sup)
+ok = len(app) == 231 and all(int(p) == par[int(i) - 1] and int(c) == col[int(i) - 1] for i, p, c in app) \
+    and in_tex('Appendix~S1 of the Supplementary Material')
+check('Supplementary Appendix S1: 231 vertices in radicals, parent indices and colours match the data files', ok)
 
 # file names referenced in the manuscript
 names = set(re.findall(r'\\texttt\{([^}]*)\}', tex))
