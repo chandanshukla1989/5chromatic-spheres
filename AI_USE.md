@@ -14,8 +14,3 @@ and for drafting the manuscript and documentation.
 Every claim of the paper is backed by a certificate or an exact computation that can be re-checked
 without trusting the software that produced it: `./verify_all.sh` re-runs all checks (see
 `REPRODUCIBILITY.md`).
-
-<!-- AUTHOR: after running ./verify_all.sh on your own machine, add the sentence
-     "The author re-ran all verification steps on <date> on his own machine." -->
-
-No AI system is an author of this work.
