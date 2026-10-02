@@ -14,7 +14,7 @@
 | Proof (iv): criticality now refers to the stored certificates `H*_criticality_certificates.txt` (231 and 961 explicit 4-colourings of G − v, checked edge by edge) | certificates were generated and are now part of the package |
 | Data availability: rewritten for the repository (DOI placeholder), lists all artifact types and `verify_all.sh` | repository replaces "supplementary files" |
 | References to "supplementary files" for data → "repository" | consistency |
-| "Acknowledgements" → "Use of AI tools" with an accurate disclosure | accurate statement of AI use and of the author's role |
+| "Acknowledgements" → "Use of AI tools": the author's role (initiated and led the work, set the verification standards, responsibility) and the tasks for which AI tools were used | accurate statement of the author's contribution and of AI use |
 
 No mathematical claim was strengthened. All numbers were re-derived from the files by `verification/audit.py` (43/43 checks pass, `results/AUDIT.md`).
 
