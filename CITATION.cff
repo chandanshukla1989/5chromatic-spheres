@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use these data or code, please cite the paper and this repository."
+title: "Smaller 5-chromatic unit-distance graphs on two icosahedral spheres: data, proofs and code"
+authors:
+  - family-names: Shukla
+    given-names: Chandan Kumar
+    affiliation: Independent Researcher, India
+    email: shukla.chandan12@gmail.com
+date-released: 2026-10-03
+license: MIT
+keywords: [Hadwiger-Nelson problem, unit-distance graph, chromatic number, sphere, SAT, DRAT]
+preferred-citation:
+  type: article
+  title: "Smaller 5-chromatic unit-distance graphs on two icosahedral spheres"
+  authors:
+    - family-names: Shukla
+      given-names: Chandan Kumar
+  year: 2026
+  notes: "Submitted manuscript"
