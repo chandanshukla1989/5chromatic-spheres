@@ -1,0 +1,67 @@
+\begin{thebibliography}{10}
+
+\bibitem{Kissat}
+Armin Biere and Mathias Fleury.
+\newblock {Kissat} {SAT} solver.
+\newblock \url{https://github.com/arminbiere/kissat}.
+\newblock version 4.0.4.
+
+\bibitem{CV2022}
+Danila Cherkashin and Vsevolod Voronov.
+\newblock On the chromatic number of 2-dimensional spheres, 2022.
+\newblock arXiv:2203.08666.
+
+\bibitem{deGrey}
+Aubrey D. N.~J. de~Grey.
+\newblock The chromatic number of the plane is at least 5.
+\newblock {\em Geombinatorics}, 28/1:18--31, 2018.
+
+\bibitem{Heule1}
+Marijn J.~H. Heule.
+\newblock Computing small unit-distance graphs with chromatic number 5.
+\newblock {\em Geombinatorics}, 28/1:32--50, 2018.
+
+\bibitem{PySAT}
+Alexey Ignatiev, Antonio Morgado, and Joao Marques-Silva.
+\newblock {PySAT}: A {P}ython toolkit for prototyping with {SAT} oracles.
+\newblock In {\em Theory and Applications of Satisfiability Testing -- SAT
+  2018}, volume 10929 of {\em LNCS}, pages 428--437, 2018.
+
+\bibitem{PARI}
+The PARI~Group, Univ. Bordeaux.
+\newblock {\em {PARI/GP} version 2.19}.
+\newblock \url{http://pari.math.u-bordeaux.fr/}.
+
+\bibitem{Parts1}
+Jaan Parts.
+\newblock Graph minimization, focusing on the example of 5-chromatic
+  unit-distance graphs in the plane.
+\newblock {\em Geombinatorics}, 29/4:137--166, 2020.
+
+\bibitem{Simmons}
+Gustavus~J. Simmons.
+\newblock The chromatic number of the sphere.
+\newblock {\em Journal of the Australian Mathematical Society}, 21(4):473--480,
+  June 1976.
+
+\bibitem{VNDrepo}
+Vsevolod Voronov.
+\newblock dist-graphs (repository with mathematica notebooks for $g_{372}$ and
+  $g_{972}$).
+\newblock \url{https://github.com/vsvor/dist-graphs}, 2020.
+
+\bibitem{VND2022}
+Vsevolod Voronov, Anna Neopryatnaya, and Eugene Dergachev.
+\newblock Constructing 5-chromatic unit distance graphs embedded in the
+  {E}uclidean plane and two-dimensional spheres.
+\newblock {\em Discrete Mathematics}, 345(12):113106, 2022.
+\newblock arXiv:2106.11824.
+
+\bibitem{WetzlerHeuleHunt2014}
+Nathan Wetzler, Marijn J.~H. Heule, and Warren~A. Hunt.
+\newblock {DRAT-trim}: Efficient checking and trimming using expressive clausal
+  proofs.
+\newblock In {\em Theory and Applications of Satisfiability Testing -- SAT
+  2014}, volume 8561 of {\em LNCS}, pages 422--429, 2014.
+
+\end{thebibliography}

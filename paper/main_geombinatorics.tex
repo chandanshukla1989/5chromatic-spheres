@@ -1,5 +1,11 @@
 \documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+\usepackage[paperwidth=5.5in,paperheight=8.5in,top=0.35in,left=0.35in,right=0.35in,bottom=0.5in,includehead=false,includefoot=false]{geometry}
+\renewcommand{\rmdefault}{ptm}
+\usepackage{longtable}
+\sloppy
+\pagestyle{empty}
+\renewcommand{\_}{\textunderscore\allowbreak}
+\setlength{\emergencystretch}{3em}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -12,12 +18,15 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{Smaller 5-chromatic unit-distance graphs\\ on two icosahedral spheres}
-\author{Chandan Kumar Shukla\\ {\small Independent Researcher, India}\\ {\small \texttt{shukla.chandan12@gmail.com}}}
-\date{}
 
 \begin{document}
-\maketitle
+\begin{center}
+{\fontsize{14}{17}\selectfont\bfseries SMALLER 5-CHROMATIC UNIT-DISTANCE GRAPHS\\ ON TWO ICOSAHEDRAL SPHERES\par}
+\vspace{6pt}
+{\bfseries Chandan Kumar Shukla\par}
+Independent Researcher, India\\ shukla.chandan12@gmail.com
+\end{center}
+\thispagestyle{empty}
 
 \begin{abstract}
 Voronov, Neopryatnaya and Dergachev constructed 5-chromatic unit-distance graphs on the sphere
@@ -68,13 +77,13 @@ removed (Section~\ref{sec:graphs} and Appendix~\ref{app:list}).
 
 Let $\Gamma$ be the full symmetry group of the regular icosahedron (order $120$, including reflections),
 generated as in~\cite{VNDrepo} by
-\[
+\begin{gather*}
 \begin{pmatrix}-1&0&0\\0&-1&0\\0&0&1\end{pmatrix},\quad
-\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},\quad
+\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},\\
 \frac12\begin{pmatrix}1&-\tau&\tau^{-1}\\ \tau&\tau^{-1}&-1\\ \tau^{-1}&1&\tau\end{pmatrix},\quad
 \begin{pmatrix}1&0&0\\0&-1&0\\0&0&1\end{pmatrix},
 \qquad \tau=\tfrac{1+\sqrt5}{2}.
-\]
+\end{gather*}
 
 \paragraph{$G_{372}$.} Its vertices are the $12$ vertices of the icosahedron with unit edge (the
 $\Gamma$-orbit of $(\frac{\tau}{2},\frac12,0)$) together with the $\Gamma$-orbits of the three points
@@ -82,7 +91,7 @@ $v_1,v_2,v_3\in S^2(r_1)$ of Table~\ref{tab:poly372}, each orbit of size $120$; 
 distance $1$. It has $372$ vertices and $1710$ edges~\cite{VND2022}.
 
 \begin{table}[ht]
-\centering\small
+\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{ccl}
 \toprule
  & value & minimal polynomial of twice the coordinate \\
@@ -171,7 +180,7 @@ vertices of each of the orbits of $v_2$ and $v_3$. Its symmetry group within $\G
 Table~\ref{tab:summary} summarizes both graphs and Figure~\ref{fig:h231} shows $H_{231}$.
 
 \begin{table}[ht]
-\centering\small
+\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{lcccccc}
 \toprule
 graph & sphere & $|V|$ & $|E|$ & degrees & composition by orbit & vertex-critical \\
@@ -326,9 +335,7 @@ the coordinates rounded to four decimals (labels of exact vertices of $G_{372}$,
 Section~\ref{sec:graphs}), and a colour $1$--$5$ of a proper 5-colouring.
 
 \begin{scriptsize}
-\begin{multicols}{2}
-\noindent
-\begin{tabular}{@{}rlrrrc@{}}
+\begin{longtable}{@{}rlrrrc@{}}
 \toprule
 \# & orb. & $x$ & $y$ & $z$ & col.\\
 \midrule
@@ -391,11 +398,10 @@ Section~\ref{sec:graphs}), and a colour $1$--$5$ of a proper 5-colouring.
 57 & 1 & $-0.7311$ & $-0.3739$ & $-0.4799$ & 3 \\
 58 & 1 & $-0.4799$ & $\phantom{-}0.7311$ & $\phantom{-}0.3739$ & 5 \\
 \bottomrule
-\end{tabular}
+\end{longtable}
 
-\vspace{2mm}
 
-\begin{tabular}{@{}rlrrrc@{}}
+\begin{longtable}{@{}rlrrrc@{}}
 \toprule
 \# & orb. & $x$ & $y$ & $z$ & col.\\
 \midrule
@@ -458,11 +464,10 @@ Section~\ref{sec:graphs}), and a colour $1$--$5$ of a proper 5-colouring.
 115 & 2 & $-0.0834$ & $\phantom{-}0.9440$ & $-0.0796$ & 5 \\
 116 & 2 & $\phantom{-}0.9440$ & $\phantom{-}0.0796$ & $-0.0834$ & 1 \\
 \bottomrule
-\end{tabular}
+\end{longtable}
 
-\vspace{2mm}
 
-\begin{tabular}{@{}rlrrrc@{}}
+\begin{longtable}{@{}rlrrrc@{}}
 \toprule
 \# & orb. & $x$ & $y$ & $z$ & col.\\
 \midrule
@@ -525,11 +530,10 @@ Section~\ref{sec:graphs}), and a colour $1$--$5$ of a proper 5-colouring.
 173 & 3 & $\phantom{-}0.1765$ & $-0.7993$ & $\phantom{-}0.4843$ & 4 \\
 174 & 3 & $\phantom{-}0.4843$ & $-0.1765$ & $\phantom{-}0.7993$ & 4 \\
 \bottomrule
-\end{tabular}
+\end{longtable}
 
-\vspace{2mm}
 
-\begin{tabular}{@{}rlrrrc@{}}
+\begin{longtable}{@{}rlrrrc@{}}
 \toprule
 \# & orb. & $x$ & $y$ & $z$ & col.\\
 \midrule
@@ -591,10 +595,8 @@ Section~\ref{sec:graphs}), and a colour $1$--$5$ of a proper 5-colouring.
 230 & 3 & $-0.6319$ & $-0.0624$ & $-0.7081$ & 4 \\
 231 & 3 & $-0.5852$ & $-0.1379$ & $-0.7369$ & 4 \\
 \bottomrule
-\end{tabular}
+\end{longtable}
 
-\vspace{2mm}
-\end{multicols}
 \end{scriptsize}
 
 
@@ -607,7 +609,7 @@ $M'\in\Gamma'$), or a vertex of the (great) icosahedron; together with the gener
 Section~\ref{sec:parents} this defines every vertex exactly within this paper. The four-decimal labels of
 Appendix~\ref{app:list} and Table~\ref{tab:removed} select the vertices.
 
-{\small
+{\scriptsize
 \paragraph{$v_{1}$} (on $S^2(r_1)$)
 \begin{align*}
 x&=\tfrac{1}{4}-\tfrac{1}{8}b+\tfrac{1}{8}\sqrt5\,b\\
