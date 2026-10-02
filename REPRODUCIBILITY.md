@@ -18,7 +18,7 @@
 
 ```sh
 pip install -r requirements.txt
-DRAT_TRIM=/path/to/drat-trim ./verify_all.sh      # about 3 minutes on a laptop
+DRAT_TRIM=/path/to/drat-trim ./verify_all.sh      # about 6 minutes on a laptop
 ```
 
 ## Step by step (from the repository root)

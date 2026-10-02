@@ -8,6 +8,7 @@ authors:
     email: shukla.chandan12@gmail.com
 date-released: 2026-10-03
 license: MIT
+repository-code: "https://github.com/chandanshukla1989/5chromatic-spheres"
 keywords: [Hadwiger-Nelson problem, unit-distance graph, chromatic number, sphere, SAT, DRAT]
 preferred-citation:
   type: article

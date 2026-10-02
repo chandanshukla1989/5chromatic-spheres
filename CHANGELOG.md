@@ -12,7 +12,7 @@
 | Proof (i): "coordinates to 60 significant digits" → "30 significant digits (files …)" | the margin check uses the 30-digit files; margins unchanged |
 | Proof (ii)–(iv): file names of CNF, DRAT, colourings, criticality certificates and cross-check script added | every computational claim traceable to an artifact |
 | Proof (iv): criticality now refers to the stored certificates `H*_criticality_certificates.txt` (231 and 961 explicit 4-colourings of G − v, checked edge by edge) | certificates were generated and are now part of the package |
-| Data availability: rewritten for the repository (DOI placeholder), lists all artifact types and `verify_all.sh` | repository replaces "supplementary files" |
+| Data availability: rewritten for the repository (GitHub URL), lists all artifact types and `verify_all.sh` | repository replaces "supplementary files" |
 | References to "supplementary files" for data → "repository" | consistency |
 | "Acknowledgements" → "Use of AI tools": the author's role (initiated and led the work, set the verification standards, responsibility) and the tasks for which AI tools were used | accurate statement of the author's contribution and of AI use |
 

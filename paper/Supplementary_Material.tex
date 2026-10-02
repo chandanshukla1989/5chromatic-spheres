@@ -23,7 +23,7 @@ $H_{961}$ & $S^2(r_2)$, $r_2=\cos\frac{3\pi}{10}$ & $G_{972}$ & 961 & 4028 & $\c
 \end{center}
 $G_{372}$ and $G_{972}$ are the graphs of Voronov, Neopryatnaya and Dergachev (Discrete Math.\ 345 (2022)
 113106). $H_{231}$ is the smallest graph found by our search; it is not claimed to be minimum. All files
-named below are in the repository accompanying the paper; \texttt{verify\_all.sh} runs every check.
+named below are in the repository accompanying the paper (\url{https://github.com/chandanshukla1989/5chromatic-spheres}); \texttt{verify\_all.sh} runs every check.
 
 \section{Exact coordinates and number fields}
 For each sphere all coordinates lie in a number field $K$ of degree $8$ (Galois group of the Galois
@@ -104,7 +104,7 @@ Apple clang 21.0.0; XZ Utils 5.8.4; macOS (Darwin, arm64).
 \section{Reproducing all checks}
 \begin{verbatim}
 pip install -r requirements.txt
-DRAT_TRIM=/path/to/drat-trim ./verify_all.sh       # about 3-10 minutes
+DRAT_TRIM=/path/to/drat-trim ./verify_all.sh       # about 6 minutes on a laptop
 \end{verbatim}
 Individual steps and expected outputs are listed in \texttt{REPRODUCIBILITY.md}.
 
