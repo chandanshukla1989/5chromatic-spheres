@@ -1,0 +1,10 @@
+[6] start 972 41s
+[6] -> 971 crit=7 105s
+[6] -> 970 crit=19 330s
+[6] -> 969 crit=36 553s
+[6] -> 968 crit=43 701s
+[6] start 968 89s
+[6] start 968 97s
+[6] -> 967 crit=17 564s
+[6] -> 966 crit=19 727s
+[6] scanned=25 removed_total=6 size=966 critical=25 799s

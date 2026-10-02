@@ -1,0 +1,6 @@
+[3] it=10 cur=235 best=235 t=540s
+[3] it=20 cur=235 best=235 t=930s
+[3] *** NEW BEST 234 *** it=27 t=1225s
+[3] it=30 cur=234 best=234 t=1380s
+[3] it=40 cur=234 best=234 t=2043s
+[3] it=50 cur=234 best=234 t=2559s

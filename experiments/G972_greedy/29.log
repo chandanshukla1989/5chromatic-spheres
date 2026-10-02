@@ -1,0 +1,5 @@
+[29] start 968 196s
+[29] scanned=25 removed_total=4 size=968 critical=27 380s
+[29] scanned=50 removed_total=4 size=968 critical=52 622s
+[29] scanned=75 removed_total=4 size=968 critical=77 714s
+[29] scanned=100 removed_total=4 size=968 critical=102 875s
