@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\title{Supplementary Material\\[2pt] \large Smaller 5-chromatic unit-distance graphs on two icosahedral spheres}
+\author{Chandan Kumar Shukla\\ {\small Independent Researcher, India}}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Overview}
+\begin{center}\small
+\begin{tabular}{lllrrl}
+\toprule
+graph & sphere & parent & vertices & edges & properties\\
+\midrule
+$H_{231}$ & $S^2(r_1)$, $r_1=\cos\frac{\pi}{10}$ & $G_{372}$ & 231 & 938 & $\chi=5$, vertex-critical, no Moser spindle\\
+$H_{961}$ & $S^2(r_2)$, $r_2=\cos\frac{3\pi}{10}$ & $G_{972}$ & 961 & 4028 & $\chi=5$, vertex-critical, no Moser spindle\\
+\bottomrule
+\end{tabular}
+\end{center}
+$G_{372}$ and $G_{972}$ are the graphs of Voronov, Neopryatnaya and Dergachev (Discrete Math.\ 345 (2022)
+113106). $H_{231}$ is the smallest graph found by our search; it is not claimed to be minimum. All files
+named below are in the repository accompanying the paper; \texttt{verify\_all.sh} runs every check.
+
+\section{Exact coordinates and number fields}
+For each sphere all coordinates lie in a number field $K$ of degree $8$ (Galois group of the Galois
+closure $D_8$), a tower of quadratic extensions $\mathbb{Q}\subset\mathbb{Q}(\sqrt5)\subset
+\mathbb{Q}(\sqrt5,b)\subset\mathbb{Q}(\sqrt5,b,g)=K$ with $b=\sqrt\beta$, $g=\sqrt\gamma$ (positive roots):
+\begin{align*}
+S^2(r_1):\quad & \beta=\tfrac72+\tfrac52\sqrt5\approx 9.0902,\quad
+\gamma=\tfrac{15}{4}-\tfrac74\sqrt5+\bigl(\tfrac34-\tfrac14\sqrt5\bigr)b\approx 0.41269,\\
+S^2(r_2):\quad & \beta=\tfrac{23}{2}+\tfrac{11}{2}\sqrt5\approx 23.798,\quad
+\gamma=\tfrac54-\tfrac34\sqrt5+\bigl(-\tfrac14+\tfrac14\sqrt5\bigr)b\approx 1.0804.
+\end{align*}
+Every coordinate is written as $\sum q_j e_j$ with rational $q_j$ and
+$e_j\in\{1,\sqrt5,b,\sqrt5 b,g,\sqrt5 g,bg,\sqrt5 bg\}$. The files
+\texttt{H231\_exact\_coordinates.m} and \texttt{H961\_exact\_coordinates.m} give all vertices in this form
+(Mathematica syntax, \texttt{Sqrt[...]}); the \texttt{.py} files give the same in Python syntax
+(\texttt{(x)**(1/2)}; load with \texttt{sympy} in rational mode). All vertices of $H_{231}$ and the
+eleven vertices deleted from $G_{972}$ are listed in Appendices~\ref{app:h231} and~\ref{app:removed}.
+
+\section{Parent graphs and index mapping}
+\texttt{construction/build\_G372.py} and \texttt{build\_G972.py} rebuild the parent graphs with $60$-digit
+coordinates from the published minimal polynomials (and the closed form of the second coordinate of $w_8$).
+The \emph{parent index} of a vertex is its position in the output: for $G_{372}$ the icosahedron (0--11),
+then the orbits of $v_1$ (12--131), $v_2$ (132--251), $v_3$ (252--371); for $G_{972}$ the orbits of
+$w_1,\dots,w_8$ (0--959, $120$ each), then the great icosahedron (960--971). Within an orbit the order is
+that of a breadth-first enumeration of the group from its generators (as in the scripts). Column~2 of
+\texttt{H231\_vertices.txt} and \texttt{H961\_vertices.txt} gives the parent index;
+\texttt{verify\_graph.py} checks that each vertex coincides with the parent vertex of that index
+(maximal difference $<10^{-30}$, the precision of the files). The group $\Gamma'$ used for $G_{972}$ is
+generated, as in the authors' notebook, by $g_1,g_2,Mg_3M,g_4$; it equals $M\Gamma M$ ($M$: swap of $y$
+and $z$), which we checked by enumerating both groups.
+
+\section{Verification methodology}
+\begin{center}\small
+\begin{tabular}{p{0.32\textwidth}p{0.6\textwidth}}
+\toprule
+claim & method (program)\\
+\midrule
+vertices on the sphere, edges of length 1 & exact arithmetic in $K$ with PARI/GP (\texttt{verification/pari/exact372.gp}, \texttt{exact972.gp}); independently, exact arithmetic on the radical files with an own implementation of the tower (\texttt{check\_exact\_radicals.py}; perturbing a single coordinate was confirmed to be detected)\\
+no missing unit edge & all non-adjacent pairs have $\bigl||p-q|-1\bigr|\ge %GAP231%$ ($H_{231}$), $\ge %GAP961%$ ($H_{961}$) with 30-digit coordinates (\texttt{verify\_graph.py})\\
+no proper 4-colouring & DRAT proof checked by drat-trim; cross-checks with CaDiCaL, Glucose, MiniSat and a binary encoding (\texttt{crosscheck\_solvers.py}); SAT-free DSATUR search for $H_{231}$ (\texttt{dsatur.c})\\
+proper 5-colouring & edge-by-edge check of \texttt{H*\_5colouring.txt} (\texttt{verify\_graph.py})\\
+vertex-critical & edge-by-edge check of one 4-colouring of $G-v$ per vertex $v$ (\texttt{H*\_criticality\_certificates.txt}, \texttt{verify\_graph.py})\\
+no Moser spindle & exhaustive search (\texttt{verify\_graph.py})\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{CNF encoding}
+For a graph with vertices $0,\dots,n-1$ the variable $4v+c+1$ means ``vertex $v$ has colour $c$''
+($c=0,\dots,3$). The files \texttt{H*\_4col.cnf} contain, for every vertex, the clause
+$\bigvee_c x_{v,c}$ and the six clauses $\neg x_{v,c}\vee\neg x_{v,c'}$; for every edge $uv$ and colour
+$c$ the clause $\neg x_{u,c}\vee\neg x_{v,c}$; and two unit clauses giving colours $0$ and $1$ to the
+endpoints of the first edge (no loss of generality, by symmetry of colours). The formula is satisfiable if
+and only if the graph is 4-colourable.
+
+\section{DRAT verification}
+Proofs were produced with \texttt{kissat --no-binary H231\_4col.cnf H231\_4col.drat} (Kissat 4.0.4) and
+are stored compressed. To check:
+\begin{verbatim}
+xz -dk H231/H231_4col.drat.xz
+drat-trim H231/H231_4col.cnf H231/H231_4col.drat -t 20000      # -> s VERIFIED
+\end{verbatim}
+and likewise for $H_{961}$ (about two minutes). Our drat-trim outputs are in
+\texttt{H*\_drat-trim.log} and \texttt{results/drat-trim\_*.log}.
+
+\section{5-colourings, criticality, Moser spindles}
+\texttt{H*\_5colouring.txt} lists \emph{vertex colour} with colours $1$--$5$.
+\texttt{H*\_criticality\_certificates.txt} has one line per vertex $v$: \emph{v string}, where character
+$x$ of the string is the colour ($0$--$3$) of vertex $x$ in a proper 4-colouring of $G-v$ and
+\texttt{-} for $x=v$. A Moser spindle is two rhombi (pairs of unit triangles sharing an edge) with a common
+apex whose tips are adjacent; \texttt{verify\_graph.py} enumerates all of them (none found).
+
+\section{Software versions}
+Python 3.14.7; python-sat 1.9.dev15 (CaDiCaL 1.5.3, Glucose 4, MiniSat 2.2); mpmath 1.3.0; numpy 2.5.3;
+sympy 1.14.0; PARI/GP 2.19.0 with galdata; Kissat 4.0.4; drat-trim (commit \texttt{2e3b2dc}, 2024-11-25);
+Apple clang 21.0.0; XZ Utils 5.8.4; macOS (Darwin, arm64).
+
+\section{Reproducing all checks}
+\begin{verbatim}
+pip install -r requirements.txt
+DRAT_TRIM=/path/to/drat-trim ./verify_all.sh       # about 3-10 minutes
+\end{verbatim}
+Individual steps and expected outputs are listed in \texttt{REPRODUCIBILITY.md}.
+
+\section{File manifest (SHA-256)}
+{\small
+\begin{longtable}{p{0.45\textwidth}p{0.5\textwidth}}
+\toprule
+file & content\\
+\midrule
+%MANIFEST%
+\bottomrule
+\end{longtable}}
+
+\appendix
+\section{All vertices of $H_{231}$ in radicals}\label{app:h231}
+Numbering as in Appendix A of the paper (vertex $i$ here is index $i-1$ in the edge list); parent index in
+$G_{372}$, orbit, and colour in the proper 5-colouring. $b,g$ as in Section~2 for $S^2(r_1)$.
+
+{\footnotesize\raggedright
+%H231RADICALS%}
+
+\section{The eleven vertices of $G_{972}$ deleted to obtain $H_{961}$}\label{app:removed}
+Numbering as in Table 2 of the paper; $b,g$ as in Section~2 for $S^2(r_2)$. All other $961$ vertices of
+$G_{972}$ form $H_{961}$; their exact coordinates are in \texttt{H961\_exact\_coordinates.m}.
+
+{\footnotesize\raggedright
+%REMOVED%}
+
+\end{document}
