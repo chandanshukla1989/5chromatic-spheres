@@ -1,0 +1,2 @@
+H961/H961_exact_coordinates.m: 961 vertices; all exactly on sphere: True; edges checked exactly: 4028; failures: 0
+  max |exact expression - reference coordinate| = 4.83e-31

@@ -1,0 +1,10 @@
+field degree: 8
+embedding: y -> 0.52803326697329001363317367611561089852837220208568869534227119322188300549444009
+|v1|^2 == r1^2 exactly: 1
+|v2|^2 == r1^2 exactly: 1
+|v3|^2 == r1^2 exactly: 1
+group order: 120   all orthogonal: 1
+exact points: 384
+all 372 numeric points matched to distinct exact points: 1
+all points of H231 exactly on the sphere r1 (r1^2=(5+sqrt5)/8): 1
+edges of H231 checked exactly: 938   failures: 0

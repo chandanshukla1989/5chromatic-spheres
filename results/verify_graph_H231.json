@@ -1,0 +1,18 @@
+{
+ "graph": "H231",
+ "vertices": 231,
+ "edges": 938,
+ "counts_ok": true,
+ "parent_indices_distinct": true,
+ "parent_max_coordinate_difference": 4.6386568793699295e-31,
+ "parent_ok": true,
+ "sphere_max_deviation": 9.007885689679822e-31,
+ "edge_length_max_deviation": 6.638772654330621e-31,
+ "nonedge_min_gap": 0.0022964268577944104,
+ "missing_unit_edges": 0,
+ "edges_ok": true,
+ "five_colouring_ok": true,
+ "criticality_certificates_ok": true,
+ "moser_spindles": 0,
+ "all_ok": true
+}

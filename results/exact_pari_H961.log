@@ -1,0 +1,8 @@
+final field degree: 8
+embedding found; max coordinate error < 1e-30
+all 8 base points exactly on sphere r2: 1
+group order 120
+exact points 984
+all 972 numeric points matched to distinct exact points: 1
+all 961 points exactly on sphere r2 (r2^2=(5-sqrt5)/8): 1
+edges checked exactly: 4028   failures: 0

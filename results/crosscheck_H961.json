@@ -1,0 +1,17 @@
+{
+ "graph": "H961",
+ "triangle_fixed": [
+  0,
+  820,
+  903
+ ],
+ "direct/cd15": "UNSAT",
+ "direct/cd15/seconds": 38.9,
+ "direct/g4": "UNSAT",
+ "direct/g4/seconds": 86.4,
+ "direct/m22": "UNSAT",
+ "direct/m22/seconds": 109.5,
+ "binary/cd15": "UNSAT",
+ "binary/cd15/seconds": 35.0,
+ "all_unsat": true
+}
