@@ -33,6 +33,7 @@ Every check prints its result and writes a log to `results/`. Expected output: s
 | a proper 5-colouring exists | `H*/H*_5colouring.txt` | `verify_graph.py` | `results/verify_graph_*.json` |
 | vertex-critical (a 4-colouring of G − v for every v) | `H*/H*_criticality_certificates.txt` | `verify_graph.py` | `results/verify_graph_*.json` |
 | no Moser spindle | `H*/H*_edges.txt` | `verify_graph.py` | `results/verify_graph_*.json` |
+| exact radical coordinates are reproducible | `H*/H*_exact_coordinates.m`, `.py` | `cd construction/radicals && gp -q radicals_H231.gp < /dev/null` (and `H961`), `python m_to_py.py H231`; outputs are byte-identical to the files in `H231/`, `H961/` | — |
 | exact coordinates in radicals (human-readable) | `paper/Supplementary_Material.pdf`, App. A–B | `verification/check_exact_radicals.py` | `results/exact_radicals_*.log` |
 | 16 greedy runs (235–337), local search 235 → 231, G972 triage 968 → 963 → 961 | `experiments/` | logs, see `experiments/README.md` | `experiments/*/` |
 
@@ -42,7 +43,8 @@ Every check prints its result and writes a log to `results/`. Expected output: s
 paper/         manuscript (LaTeX, figures, PDF) and Supplementary_Material (LaTeX, PDF, generator)
 H231/, H961/   final graphs: vertices, edges, exact coordinates (.m, .py), 5-colouring,
                criticality certificates, CNF + DRAT proof, drat-trim log
-construction/  rebuild the parent graphs G372 and G972 from the published minimal polynomials
+construction/  rebuild the parent graphs G372 and G972 from the published minimal polynomials;
+               radicals/ regenerates the exact nested-radical coordinate files (PARI/GP)
 verification/  all verification code (PARI/GP, Python, C) and shell drivers
 experiments/   original search scripts and the logs/outputs of the runs that produced the graphs
 results/       output of the verification runs

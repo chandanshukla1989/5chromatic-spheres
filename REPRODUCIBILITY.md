@@ -44,5 +44,7 @@ stated index; that all listed edges have length 1 and no other pair has length 1
   constraint, for every edge and colour a conflict clause, and fix the colours of the two endpoints of one
   edge. `kissat --no-binary H231/H231_4col.cnf proof.drat` regenerates a proof (the proof file may differ
   between runs; any proof accepted by drat-trim certifies unsatisfiability).
-- Radical coordinates: generated with PARI/GP from the quadratic tower described in the paper; they are
-  checked by `verification/check_exact_radicals.py` without PARI/GP.
+- Radical coordinates: `cd construction/radicals && gp -q radicals_H231.gp < /dev/null` (likewise `radicals_H961.gp`)
+  writes `H231_exact_coordinates.m` from the quadratic tower of the paper; `python m_to_py.py H231` writes the Python
+  version. Both outputs are byte-identical to the files in `H231/` and `H961/`. They are checked by
+  `verification/check_exact_radicals.py` without PARI/GP.

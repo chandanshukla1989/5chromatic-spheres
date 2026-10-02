@@ -36,6 +36,8 @@ No mathematical claim was strengthened. All numbers were re-derived from the fil
   generator convention so that parent indices match), `verification/verify_graph.py` (counts, parent mapping,
   edges, colourings, certificates, spindles), `crosscheck_solvers.py`, `make_criticality_certificates.py`,
   `audit.py`, shell drivers for DRAT, exact and DSATUR checks.
+- Added `construction/radicals/` (PARI/GP tower scripts and `m_to_py.py`), which regenerate the exact-coordinate
+  files byte for byte; previously these generators were not part of the package.
 - Fixed: drat-trim writes carriage returns; the DRAT driver normalises them before checking for `s VERIFIED`.
 - Renamed leftover identifiers (`E235`/`S235` → `E231`/`S231`) in the PARI/GP inputs; removed an unused code
   fragment from the radical checker.
